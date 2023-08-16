@@ -24,15 +24,19 @@ class Stack {
     peek() {
         return this.top
     }
-    /* Esta función la utilziamos para saber si nuestra pila está vacia, solo basta con comprobar si el valor de la variable "top" es igual a "null", "null" es el valor que "top" toma cuando se crear o instancia la clase "stack" y este no cambia a menos de que realicemos un "push"  */
+    /* Este metodo lo utilziamos para saber si nuestra pila está vacia, solo basta con comprobar si el valor de la variable "top" es igual a "null", "null" es el valor que "top" toma cuando se crear o instancia la clase "stack" y este no cambia a menos de que realicemos un "push"  */
     isEmpty() {
         return this.top === null
     }
 
+    /* Este metodo lo utilizamos para imprimir por consola cada uno de los datos que están en la pila */
     print() {
+        /* se crea una variable a la cual se le asignan los valores que hay en la variable 'top', con esto tendremos el ultimo valor agregado en la pila */
         let aux = this.top
+        /* Recorremos todos los valores que tiene la pila hasta que llegue a null, el cual seria el primer dato asignado cuando se creo o instanció la clase "Stack"*/
         while(aux !== null) {
             console.log(aux.data)
+            /* despues de imprimir el dato por consola le agregamos el valor de 'prev' a la variable 'aux' para que este entre de nuevo al bucle y confirme si este valor es diferente de null */
             aux = aux.prev
         }
     }
